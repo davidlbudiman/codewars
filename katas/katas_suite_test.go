@@ -9,5 +9,5 @@ import (
 
 func TestValidBraces(t *testing.T) {
 	RegisterFailHandler(Fail)
-	RunSpecs(t, "ValidBraces Suite")
-  }
+	RunSpecs(t, "Katas Suite")
+}
