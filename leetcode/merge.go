@@ -1,8 +1,8 @@
 package leetcode
 
-func merge(nums1 []int, m int, nums2 []int, n int) {
+func Merge(nums1 []int, m int, nums2 []int, n int) {
 	var nums1_temp = make([]int, m)
-	for i, _ := range nums1_temp {
+	for i := range nums1_temp {
 		nums1_temp[i] = nums1[i]
 	}
 	i, j, k := 0, 0, 0
@@ -45,7 +45,7 @@ func merge(nums1 []int, m int, nums2 []int, n int) {
 // place at least once and at most three times.
 // The below solution shows you O(n) complexity, in reality it loops twice. But since we don't put constant in 
 // complexity, hence O(n)
-func merge_counting_sort(nums1 []int, m int, nums2 []int, n int) {
+func Merge_counting_sort(nums1 []int, m int, nums2 []int, n int) {
 	var min, max int
 	var counting_maps = map[int]int{}
 	for i := 0; i < m; i++ {

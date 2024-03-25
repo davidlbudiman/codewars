@@ -1,4 +1,4 @@
-package katas_test
+package leetcode_test
 
 import (
 	"testing"
@@ -7,7 +7,7 @@ import (
 	. "github.com/onsi/gomega"
 )
 
-func TestKatas(t *testing.T) {
+func TestLeetcode(t *testing.T) {
 	RegisterFailHandler(Fail)
 	RunSpecs(t, "Katas Suite")
 }
