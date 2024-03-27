@@ -9,6 +9,29 @@ func ValidBraces(str string) bool {
 	if len(str)%2 != 0 {
 		return false
 	}
+	var openers = map[rune]rune{
+		'}': '{',
+		']': '[',
+		')': '(',
+	}
+	var lifo []rune
+	for _, c := range str {
+		if len(lifo) == 0 || c == '{' || c == '[' || c == '(' {
+			lifo = append(lifo, c)
+		} else if (c == '}' || c == ']' || c == ')') &&
+			lifo[len(lifo)-1] == openers[c] {
+			lifo = lifo[:len(lifo)-1]
+		} else {
+			return false
+		}
+	}
+	return len(lifo) == 0
+}
+
+func ValidBraces_v1(str string) bool {
+	if len(str)%2 != 0 {
+		return false
+	}
 	var closer_re = regexp.MustCompile(`[\]})]`)
 	var opener_re = regexp.MustCompile(`[\[{(]`)
 
