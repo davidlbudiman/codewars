@@ -4,7 +4,7 @@ import (
   . "github.com/onsi/ginkgo/v2"
   . "github.com/onsi/gomega"
 
-	"davidbudiman.xyz/katas"
+	"davidbudiman.xyz/codewars/katas"
 )
 var _ = Describe("SeriesSum Tests", func() {
   It("should pass provided tests", func() {

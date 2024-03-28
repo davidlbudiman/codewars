@@ -6,7 +6,7 @@ import (
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 
-	"davidbudiman.xyz/leetcode"
+	"davidbudiman.xyz/codewars/leetcode"
 )
 
 func isPalindromeTest(str string, expected bool) {

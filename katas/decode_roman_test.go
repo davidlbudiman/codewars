@@ -1,7 +1,7 @@
 package katas_test
 
 import (
-	. "davidbudiman.xyz/katas"
+	. "davidbudiman.xyz/codewars/katas"
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 )

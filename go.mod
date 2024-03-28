@@ -1,4 +1,4 @@
-module davidbudiman.xyz
+module davidbudiman.xyz/codewars
 
 go 1.22.0
 

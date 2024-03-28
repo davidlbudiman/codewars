@@ -8,7 +8,7 @@ import (
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 
-	"davidbudiman.xyz/katas"
+	"davidbudiman.xyz/codewars/katas"
 )
 
 func pow(n rune, p int) uint64 {

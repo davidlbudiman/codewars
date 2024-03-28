@@ -6,7 +6,7 @@ import (
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"
 
-	"davidbudiman.xyz/leetcode"
+	"davidbudiman.xyz/codewars/leetcode"
 )
 
 func canConstructTest(ransomNote, magazine string, expected bool) {
