@@ -27,7 +27,7 @@ func referencePermutationsSolution(s string) []string {
 	}
 	o := make([]string, len(m))
 	var i int
-	for x, _ := range m {
+	for x := range m {
 		o[i] = x
 		i++
 	}

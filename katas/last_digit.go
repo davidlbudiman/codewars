@@ -38,7 +38,7 @@ func LastDigit_akar_0(n1, n2 string) int {
 	return pow(a, (b%4)+4) % 10
 }
 
-func LastDigit_s1nn0n(n1, n2 string) int {
+func LastDigit(n1, n2 string) int {
 
 	var l = map[int][]int{
 		0: {0},
