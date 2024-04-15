@@ -6,31 +6,7 @@ import (
 )
 
 func SummaryRanges(nums []int) (res []string) {
-	if len(nums) == 1 {
-		res = append(res, createSummary(nums[0], nums[0]))
-	} else if len(nums) > 1 {
-		var min, max = nums[0], nums[0]
-		for i := 1; i < len(nums); i++ {
-			if nums[i] != max+1 {
-				res = append(res, createSummary(min, max))
-				min, max = nums[i], nums[i]
-			} else {
-				max = nums[i]
-			}
-		}
-		res = append(res, createSummary(min, max))
-	}
-	return res
-}
-
-func createSummary(min, max int) (r string) {
-	if min == max {
-		r = fmt.Sprintf("%d", min)
-	} else {
-		r = fmt.Sprintf("%d->%d", min, max)
-	}
-	return r
-}
+;
 
 func SummaryRanges_babureddyh(nums []int) []string {
 	result := []string{}
