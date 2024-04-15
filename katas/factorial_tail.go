@@ -12,33 +12,31 @@
 // Note Second argument: number is always declared, passed and displayed as a regular decimal number. If you see a test described as 42! in base 20 it's 42(10) not 42(20) = 82(10).
 package katas
 
-import "strconv"
+import (
+	"math/big"
+)
 
-func Zeroes (base, number int) int {
+func Zeroes(base, number int) int {
 	res := calculateFactorial(number)
-	s := translateToXDecimal(base, res)
-	return getTrailingZeroes(s)
+	return getTrailingZeroes(base, res)
 }
 
-func calculateFactorial(number int) string {
-	return ""
+func calculateFactorial(number int) *big.Int {
+	x := big.NewInt(1)
+	x.MulRange(1, int64(number))
+	return x
 }
 
-func translateToXDecimal(base int, res string) (s string) {
-	// max uint64: 18446744073709551615 -> length: 20
-	for i := 0; i < len(res); i += 19 {
-		x, _ := strconv.ParseUint(res[i:i+20], 10, 64)
-	}
-	return ""
-}
-
-func getTrailingZeroes(s string) (numberOfZeroes int) {
-	runes := []rune(s)
-	for i := len(runes) - 1; i >= 0; i-- {
-		if runes[i] != '0' {
+func getTrailingZeroes(base int, x *big.Int) (numberOfZeroes int) {
+	for x.Cmp(&big.Int{}) != 0 {
+		y := big.NewInt(int64(base))
+		m := &big.Int{}
+		x.DivMod(x, y, m)
+		if m.Cmp(&big.Int{}) == 0 {
+			numberOfZeroes++
+		} else {
 			break
 		}
-		numberOfZeroes++
 	}
-	return 0
+	return
 }

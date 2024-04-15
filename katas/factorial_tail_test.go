@@ -1,7 +1,6 @@
 package katas
 
 import (
-	"fmt"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -15,10 +14,14 @@ func TestZeroes(t *testing.T) {
 	}{
 		{base: 10, number: 10, exp: 2},
 		{base: 16, number: 16, exp: 3},
+		{base: 40, number: 10, exp: 2},
+		{base: 12, number: 26, exp: 10},
+		{base: 17, number: 100, exp: 5},
+		{base: 2, number: 524288, exp: 524287},
 	}
-	for i, tc := range tests {
+	for _, tc := range tests {
 		tt := tc
-		t.Run(fmt.Sprintf("Zeroes %d", i), func(t *testing.T) {
+		t.Run("Zeroes", func(t *testing.T) {
 			assert.Equal(t, tt.exp, Zeroes(tt.base, tt.number))
 		})
 	}
